@@ -85,7 +85,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     function detectBlow() {
       analyser.getByteFrequencyData(data);
       const volume = data.reduce((a, b) => a + b, 0) / data.length;
-      if (volume > 40 && !blownOut) {
+      if (volume > 85 && !blownOut) {
         blowOutFlames();
       }
       requestAnimationFrame(detectBlow);
@@ -113,4 +113,5 @@ relightBtn.addEventListener("click", () => {
   birthdaySong.pause();
   birthdaySong.currentTime = 0;
 });
+
 
